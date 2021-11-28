@@ -15,6 +15,8 @@ public:
 	float sqrdLength() const;
 	Vec2DF& normalize();
 	Vec2DF getNormalized() const;
+	float getX();
+	float getY();
 private:
 	float x;
 	float y;
