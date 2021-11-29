@@ -22,10 +22,12 @@
 #include "Game.h"
 #include "Vec2DF.h"
 
-Game::Game( MainWindow& wnd )
+Game::Game(MainWindow& wnd)
 	:
-	wnd( wnd ),
-	gfx( wnd )
+	wnd(wnd),
+	gfx(wnd),
+	frameTimer(),
+	ball(Vec2DF(200.0f, 200.0f), Vec2DF(10.0f, 10.0f))
 {
 }
 
@@ -44,4 +46,6 @@ void Game::UpdateModel()
 
 void Game::ComposeFrame()
 {
+	ball.move(frameTimer.mark());
+	ball.draw(gfx);
 }
