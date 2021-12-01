@@ -25,6 +25,7 @@
 #include "Graphics.h"
 #include "Ball.h"
 #include "FrameTimer.h"
+#include "Paddle.h"
 
 class Game
 {
@@ -43,6 +44,7 @@ private:
 	MainWindow& wnd;
 	Graphics gfx;
 	FrameTimer frameTimer;
+	Paddle paddle;
 	Ball ball;
 	/********************************/
 	/*  User Variables              */

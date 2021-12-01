@@ -17,6 +17,8 @@ public:
 	Vec2DF getNormalized() const;
 	float getX();
 	float getY();
+	void setX(float in_x);
+	void setY(float in_y);
 private:
 	float x;
 	float y;

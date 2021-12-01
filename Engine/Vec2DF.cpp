@@ -14,7 +14,6 @@ bool Vec2DF::operator==(Vec2DF& rh_vec) const
 
 Vec2DF Vec2DF::operator+(Vec2DF& rh_vec) const
 {
-
 	return Vec2DF(x + rh_vec.x, y + rh_vec.y);
 }
 
@@ -74,4 +73,14 @@ float Vec2DF::getX()
 float Vec2DF::getY()
 {
 	return y;
+}
+
+void Vec2DF::setX(float in_x)
+{
+	x = in_x;
+}
+
+void Vec2DF::setY(float in_y)
+{
+	y = in_y;
 }

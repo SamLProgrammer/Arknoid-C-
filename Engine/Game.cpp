@@ -27,7 +27,8 @@ Game::Game(MainWindow& wnd)
 	wnd(wnd),
 	gfx(wnd),
 	frameTimer(),
-	ball(Vec2DF(200.0f, 200.0f), Vec2DF(10.0f, 10.0f))
+	ball(Vec2DF(200.0f, 200.0f), Vec2DF(10.0f, 10.0f)),
+	paddle(Vec2DF(350.0f, 550.0f), Vec2DF(10.0f, 0.0f))
 {
 }
 
@@ -41,11 +42,19 @@ void Game::Go()
 
 void Game::UpdateModel()
 {
+	float delta_time = frameTimer.mark() * 60;
+	if (wnd.kbd.KeyIsPressed(VK_RIGHT)) {
+		paddle.move(delta_time, true);
+	}
 
+	if (wnd.kbd.KeyIsPressed(VK_LEFT)) {
+		paddle.move(delta_time, false);
+	}
+	ball.move(delta_time, 0, Graphics::ScreenHeight, Graphics::ScreenWidth, 0);
 }
 
 void Game::ComposeFrame()
 {
-	ball.move(frameTimer.mark());
 	ball.draw(gfx);
+	paddle.draw(gfx);
 }

@@ -340,8 +340,8 @@ void Graphics::drawCircle(int x, int y, int radius, Color c)
 
 	for (int j = y_init; j < y_limit; j++) {
 		for (int i = x_init; i < x_limit; i++) {
-			const float x_sqrd_component = (i - x)*(i - x);
-			const float y_sqrd_component = (j - y)*(j - y);
+			const float x_sqrd_component = float((i - x)*(i - x));
+			const float y_sqrd_component = float((j - y)*(j - y));
 			if ((x_sqrd_component + y_sqrd_component) < float(radius_sqr)) {
 				PutPixel(i, j, c);
 			}
