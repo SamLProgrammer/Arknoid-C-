@@ -1,9 +1,10 @@
 #include "Paddle.h"
 
 Paddle::Paddle(Vec2DF& in_position, Vec2DF& in_speed)
+	:
+	position(in_position.getX(), in_position.getY()),
+	speed(in_speed.getX(), in_speed.getY())
 {
-	position = in_position;
-	speed = in_speed;
 }
 
 void Paddle::move(float dt, bool right) {
@@ -24,4 +25,14 @@ void Paddle::move(float dt, bool right) {
 
 void Paddle::draw(Graphics& gfx){
 	gfx.drawRect(int(position.getX()), int(position.getY()), width, height, Colors::Blue);
+}
+
+float Paddle::getX()
+{
+	return position.getX();
+}
+
+float Paddle::getY()
+{
+	return position.getY();
 }
