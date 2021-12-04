@@ -29,6 +29,7 @@ Game::Game(MainWindow& wnd)
 	frameTimer(),
 	ball(Vec2DF(200.0f, 200.0f), Vec2DF(1.0f, 1.0f)),
 	paddle(Vec2DF(350.0f, 550.0f), Vec2DF(10.0f, 0.0f)),
+	initializer(),
 	interceptor()
 {
 }
@@ -59,6 +60,7 @@ void Game::UpdateModel()
 
 void Game::ComposeFrame()
 {
+	initializer.drawBricks(gfx);
 	ball.draw(gfx);
 	paddle.draw(gfx);
 }

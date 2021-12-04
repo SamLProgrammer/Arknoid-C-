@@ -13,7 +13,7 @@ void Ball::move(float dt)
 }
 
 void Ball::draw(Graphics& gfx) {
-	gfx.drawCircle(int(position.getX()), int(position.getY()), 10, Colors::Green);
+	gfx.drawCircle(int(position.getX()), int(position.getY()), radius, Colors::Green);
 }
 
 float Ball::getXCenter()

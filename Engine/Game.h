@@ -27,6 +27,7 @@
 #include "FrameTimer.h"
 #include "Paddle.h"
 #include "Interceptor.h"
+#include "Initializer.h"
 
 class Game
 {
@@ -45,6 +46,7 @@ private:
 	MainWindow& wnd;
 	Graphics gfx;
 	FrameTimer frameTimer;
+	Initializer initializer;
 	Interceptor interceptor;
 	Paddle paddle;
 	Ball ball;

@@ -17,7 +17,7 @@ public:
 	void bounceV(float slope, float paddle_x);
 	void enablePaddleInterception();
 	void disablePaddleInterception();
-	static constexpr float radius = 10.0f;
+	static constexpr float radius = 7.5f;
 	float speed_factor = 7.0f;
 private:
 	bool paddle_interception = true;
