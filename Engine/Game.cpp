@@ -27,7 +27,7 @@ Game::Game(MainWindow& wnd)
 	wnd(wnd),
 	gfx(wnd),
 	frameTimer(),
-	ball(Vec2DF(200.0f, 200.0f), Vec2DF(1.0f, 1.0f)),
+	ball(Vec2DF(200.0f, 20.0f), Vec2DF(1.0f, 1.0f)),
 	paddle(Vec2DF(350.0f, 550.0f), Vec2DF(10.0f, 0.0f)),
 	initializer(),
 	interceptor()
@@ -53,9 +53,19 @@ void Game::UpdateModel()
 		paddle.move(delta_time, false);
 	}
 
+	if (wnd.kbd.KeyIsPressed(VK_UP)) {
+		ball.fast();
+	}
+
+	if (wnd.kbd.KeyIsPressed(VK_DOWN)) {
+		ball.slow();
+	}
+
 	ball.move(delta_time);
+	initializer.check_collisions(ball);
 	interceptor.ball_wall_collision(ball, 0, Graphics::ScreenHeight, Graphics::ScreenWidth, 0);
 	interceptor.ball_paddle_collision(ball, paddle);
+
 }
 
 void Game::ComposeFrame()

@@ -16,5 +16,32 @@ bool Brick::operator==(Vec2DF& rh_vec)
 
 void Brick::draw(Graphics& gfx)
 {
-	gfx.drawRect(position.getX()+1, position.getY()+1,width-1, height-1, c);
+	if (!removed) {
+		gfx.drawRect(position.getX() + 1, position.getY() + 1, width - 1, height - 1, c);
+	}
+}
+
+float Brick::getY()
+{
+	return position.getY();
+}
+
+float Brick::getX()
+{
+	return position.getX();
+}
+
+void Brick::setY(float in_y)
+{
+	position.setY(in_y);
+}
+
+void Brick::remove()
+{
+	removed = true;
+}
+
+void Brick::setX(float in_x)
+{
+	position.setX(in_x);
 }

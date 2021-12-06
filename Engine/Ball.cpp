@@ -69,3 +69,13 @@ void Ball::disablePaddleInterception()
 {
 	paddle_interception = false;
 }
+
+void Ball::slow()
+{
+	speed_factor -= 0.1f;
+}
+
+void Ball::fast()
+{
+	speed_factor += 0.1f;
+}

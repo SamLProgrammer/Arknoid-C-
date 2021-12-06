@@ -18,7 +18,9 @@ public:
 	void enablePaddleInterception();
 	void disablePaddleInterception();
 	static constexpr float radius = 7.5f;
-	float speed_factor = 7.0f;
+	float speed_factor = 4.0f;
+	void slow();
+	void fast();
 private:
 	bool paddle_interception = true;
 	Vec2DF position;
